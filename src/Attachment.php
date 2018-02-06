@@ -116,6 +116,15 @@ final class Attachment
      */
     private $timestamp;
 
+
+    /**
+     *
+     * The callback_id
+     *
+     * @var string|null
+     */
+    private $callbackId = null;
+
     /**
      * The fields of the attachment.
      *
@@ -448,6 +457,23 @@ final class Attachment
     }
 
     /**
+     * @return null|string
+     */
+    public function getCallbackId(): ?string
+    {
+        return $this->callbackId;
+    }
+
+    /**
+     * @param null|string $callbackId
+     */
+    public function setCallbackId(?string $callbackId): void
+    {
+        $this->callbackId = $callbackId;
+    }
+
+
+    /**
      * @return array
      */
     public function getFields(): array
@@ -597,6 +623,7 @@ final class Attachment
             'author_name' => $this->authorName,
             'author_link' => $this->authorLink,
             'author_icon' => $this->authorIcon,
+            'callback_id' => $this->callbackId,
         ];
 
         $data['fields'] = $this->getFieldsAsArrays();
