@@ -28,6 +28,13 @@ final class AttachmentActionOption
      */
     protected $value;
 
+
+    public function __construct(?string $text, ?string $value = null)
+    {
+        $this->text = $text;
+        $this->value = $value;
+    }
+
     /**
      * @return null|string
      */
