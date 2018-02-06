@@ -194,6 +194,23 @@ final class AttachmentAction
     }
 
     /**
+     * Iterates over all actions in this attachment and returns
+     * them in their array form.
+     *
+     * @return array
+     */
+    private function getOptionsAsArrays(): array
+    {
+        $options = [];
+
+        foreach ($this->options as $option) {
+            $options[] = $option->toArray();
+        }
+
+        return $options;
+    }
+
+    /**
      * Get the array representation of this attachment action.
      *
      * @return array
@@ -206,7 +223,7 @@ final class AttachmentAction
             'style' => $this->style,
             'type' => $this->type,
             'value' => $this->value,
-            'options' => $this->options ? $this->options : null,
+            'options' => $this->options ? $this->getOptionsAsArrays() : null,
             'confirm' => $this->confirm ? $this->confirm->toArray() : null,
         ];
     }
