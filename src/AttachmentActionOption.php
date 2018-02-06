@@ -67,6 +67,18 @@ final class AttachmentActionOption
         $this->value = $value;
     }
 
+    /**
+     * Get the array representation of this action option.
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return [
+            'text' => $this->text,
+            'value' => $this->value,
+        ];
+    }
 
 
 }
