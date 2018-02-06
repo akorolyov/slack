@@ -1,5 +1,5 @@
 {
-    "name": "nexylan/slack",
+    "name": "akorolyov/slack",
     "description": "A simple PHP package for sending messages to Slack, with a focus on ease of use and elegant syntax.",
     "type": "library",
     "keywords": ["slack", "webhook"],
@@ -29,7 +29,7 @@
         "php-http/mock-client": "^1.1"
     },
     "suggest": {
-        "nexylan/slack-bundle": "Required for Symfony bundle support"
+        "akorolyov/slack-bundle": "Required for Symfony bundle support"
     },
     "autoload": {
         "psr-4": {

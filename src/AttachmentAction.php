@@ -66,6 +66,15 @@ final class AttachmentAction
      */
     private $confirm;
 
+
+    /**
+     *
+     * Array of AttachmentActionOption
+     *
+     * @var array|null
+     */
+    private $options;
+
     /**
      * @param string $name
      * @param string $text
@@ -172,6 +181,18 @@ final class AttachmentAction
         return $this;
     }
 
+    public function addOption(AttachmentActionOption $option): self
+    {
+        $this->options[] = $option;
+
+        return $this;
+    }
+
+    public function getOptions(): array
+    {
+        return $this->options;
+    }
+
     /**
      * Get the array representation of this attachment action.
      *
@@ -185,6 +206,7 @@ final class AttachmentAction
             'style' => $this->style,
             'type' => $this->type,
             'value' => $this->value,
+            'options' => $this->options ? $this->options : null,
             'confirm' => $this->confirm ? $this->confirm->toArray() : null,
         ];
     }
